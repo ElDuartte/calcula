@@ -1,32 +1,128 @@
-body {
-  background-color: rgb(124, 84, 51);
-}
-button {
-  border-radius: 25%;
-  border: none;
-}
-button.none {
-  background-color: gray;
+:root {
+  --global-color-background: #e0dad6;
 }
 
-.container {
-  height: 600px;
-  width: 400px;
-  border-radius: 25px;
-  overflow: hidden;
-  background-color: gray;
+* {
+  font-family: "Montserrat", sans-serif;
 }
-.input {
-  height: inherit;
-  width: inherit;
+body {
+  background-color: rgb(173, 130, 95);
+  overflow-x: hidden;
+}
+
+#container {
+  width: 1000px;
+  height: 550px;
+  margin: 20px auto;
+}
+
+#calculator {
+  width: 320px;
+  height: 520px;
+  background-color: var(--global-color-background);
+  margin: 0 auto;
+  top: 20px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#result {
+  height: 120px;
+}
+
+#history {
+  text-align: right;
+  height: 20px;
+  margin: 0 20px;
+  padding-top: 20px;
+  font-size: 15px;
+  color: #919191;
+}
+#output {
+  text-align: right;
+  height: 20px;
+  margin: 10px 20px;
+  font-size: 30px;
+}
+#keyboard {
+  height: 400px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  gap: 5px;
+  grid-template-rows: repeat(5, 1fr);
 }
-.history {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 3;
+
+.operator,
+.number,
+.empty {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  float: left;
+  border-radius: 50%;
+  border-width: 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.number {
+  background-color: rgba(255, 255, 255, 0.555);
+}
+.empty {
+  background-color: var(--global-color-background);
+}
+
+.operator,
+.number {
+  cursor: pointer;
+}
+
+.operator:active,
+.number:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  font-size: 13px;
+}
+
+.operator:focus,
+.number:focus,
+.empty:focus {
+  outline: 0;
+}
+
+button:nth-child(1) {
+  background-color: #82de91;
+}
+
+button:nth-child(2) {
+  background-color: #cfa9be;
+}
+
+button:nth-child(3) {
+  background-color: #aba9cf;
+}
+
+button:nth-child(4) {
+  font-size: 20px;
+  background-color: #20b2aa;
+}
+
+button:nth-child(8) {
+  font-size: 20px;
+  background-color: #77af88;
+}
+
+button:nth-child(12) {
+  font-size: 20px;
+  background-color: #7d93e0;
+}
+
+button:nth-child(16) {
+  font-size: 20px;
+  background-color: #f08080;
+}
+
+button:nth-child(20) {
+  font-size: 20px;
+  background-color: #ffa500;
 }
